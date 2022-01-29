@@ -52,7 +52,7 @@ namespace Jan25_Assignment2
             }
         }
     }
-    class program1
+    class Program1
     {
         static void Main()
         {

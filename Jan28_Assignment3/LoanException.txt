@@ -1,0 +1,99 @@
+2. Write a class called LoanProcess with Loan_No, Customer Name, LoanAmount, EMI_Amount, Account_Balance as its members. 
+Create a method calculate_EMI() for the LoanAmount , with the rate of interest as 13% for a total of 3 years and store it in the EMI_Amount. 
+The rest of the information to be passed through constructors. Write another function CheckBalance() which checks if the Account_Balance is less than the EMI_AMount.
+If yes then throw a custom exception. Display " Not Sufficient Balance to repay Loan" in the finally. Give explanatory comments.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Jan28_Assignment3
+{
+    internal class LoanProcess
+    {
+        //Declaring variables
+        string CustomerName;
+        int LoanNo,t;
+        double LoanAmount;
+        float EMI_Amount;
+        double Account_Balance;
+        float r;
+        //taking input from the user, using constructor
+        public LoanProcess()
+        {
+            Console.Write("Enter Customer Name:");
+            CustomerName =Console.ReadLine();
+            Console.Write("Enter Loan Number:");
+            LoanNo =int.Parse(Console.ReadLine());
+            Console.Write("Enter Loan Amount:");
+            LoanAmount =double.Parse(Console.ReadLine());
+            Console.Write("Enter Account Balance:");
+            Account_Balance =double.Parse(Console.ReadLine());
+            Console.Write("Enter rate of Interest:");
+            r = float.Parse(Console.ReadLine());
+            Console.Write("Enter Tenure of Loan in years:");
+            t = int.Parse(Console.ReadLine());
+        }
+        //calculating monthly EMI for Loan Amount
+        public void Calculate_EMI()
+        {
+            //LoanAmount is the amount user borrowed that is principle amount
+            //13 is the 13% of interest for 3 years time 
+            r = r/(12*100);//rate of interest per month
+            t = 12*t;//time period in months
+            EMI_Amount = (float)((LoanAmount*r*(Math.Pow(1+r,t)))/(Math.Pow(1+r,t)-1));
+            Console.WriteLine("Your EMI Amount is:"+EMI_Amount+" and Your Account Balance is:"+Account_Balance);
+        }
+        public void CheckBalance()
+        {
+            if(Account_Balance<EMI_Amount)
+            {
+                throw new Exception("Not Sufficient Balance to Repay Loan");
+            }
+            else
+            {
+                Console.WriteLine("Your EMI is Paid Sucessfully");
+            }
+        }
+        static void Main()
+        {
+            LoanProcess lp=new LoanProcess();
+            lp.Calculate_EMI();
+            try
+            {
+                lp.CheckBalance();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            Console.Read();
+        }
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+OUTPUT
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Enter Customer Name:Prakash
+Enter Loan Number:8753
+Enter Loan Amount:250000
+Enter Account Balance:10000
+Enter rate of Interest:13
+Enter Tenure of Loan in years:3
+Your EMI Amount is:8423.488 and Your Account Balance is:10000
+Your EMI is Paid Sucessfully
+
+
+Enter Customer Name:sandeep
+Enter Loan Number:2674
+Enter Loan Amount:120000
+Enter Account Balance:2000
+Enter rate of Interest:9
+Enter Tenure of Loan in years:2
+Your EMI Amount is:5482.169 and Your Account Balance is:2000
+Not Sufficient Balance to Repay Loan

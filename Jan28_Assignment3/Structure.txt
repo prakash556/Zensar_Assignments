@@ -1,0 +1,78 @@
+4. Write a program in C# Sharp to declare a structure called Books with a property, a method to display the value of Book_id, and a private field called Book_id (int)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Jan28_Assignment3
+{
+    struct Books
+    {
+        private int Book_id;
+        public int id
+        {
+            get { return Book_id; }
+            set { Book_id = value; }
+        }
+        //taking two more values for better understanding purpose
+        private string Book_name;
+        public string name
+        {
+            get { return Book_name; }
+            set { Book_name = value; }
+        }
+        private float Book_price { get; set; }
+        public float price
+        {
+            get { return Book_price; }
+            set { Book_price = value; }
+        }
+        //method to display values
+        public void Display()
+        {
+            Console.WriteLine("Book id is: "+Book_id);
+            Console.WriteLine("Name of the Book: "+Book_name);
+            Console.WriteLine("Price of the Book: Rs."+ Book_price);
+        }
+
+    };
+
+    internal class Structure
+    {
+        
+        static void Main()
+        {
+            Books books = new Books();
+            books.id = 389;
+            books.name = "C sharp";
+            books.price = 548.556f;
+            books.Display();
+            Console.ReadKey();
+        }
+        
+    }
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+OUTPUT
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Book id is: 389
+Name of the Book: C sharp
+Price of the Book: Rs.548.556
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+case 2: for input values
+
+	books.id = 467;
+        books.name = "Core Java";
+        books.price = 572.76f;
+
+OUTPUT :Book id is: 467
+	Name of the Book: Core Java
+	Price of the Book: Rs.572.76

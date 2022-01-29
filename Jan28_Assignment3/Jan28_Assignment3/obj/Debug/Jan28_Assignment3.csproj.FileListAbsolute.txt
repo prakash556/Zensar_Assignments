@@ -1,0 +1,8 @@
+C:\Users\PT65791\source\repos\Zensar_Assignments\Jan28_Assignment3\Jan28_Assignment3\bin\Debug\Jan28_Assignment3.exe.config
+C:\Users\PT65791\source\repos\Zensar_Assignments\Jan28_Assignment3\Jan28_Assignment3\bin\Debug\Jan28_Assignment3.exe
+C:\Users\PT65791\source\repos\Zensar_Assignments\Jan28_Assignment3\Jan28_Assignment3\bin\Debug\Jan28_Assignment3.pdb
+C:\Users\PT65791\source\repos\Zensar_Assignments\Jan28_Assignment3\Jan28_Assignment3\obj\Debug\Jan28_Assignment3.csproj.AssemblyReference.cache
+C:\Users\PT65791\source\repos\Zensar_Assignments\Jan28_Assignment3\Jan28_Assignment3\obj\Debug\Jan28_Assignment3.csproj.SuggestedBindingRedirects.cache
+C:\Users\PT65791\source\repos\Zensar_Assignments\Jan28_Assignment3\Jan28_Assignment3\obj\Debug\Jan28_Assignment3.csproj.CoreCompileInputs.cache
+C:\Users\PT65791\source\repos\Zensar_Assignments\Jan28_Assignment3\Jan28_Assignment3\obj\Debug\Jan28_Assignment3.exe
+C:\Users\PT65791\source\repos\Zensar_Assignments\Jan28_Assignment3\Jan28_Assignment3\obj\Debug\Jan28_Assignment3.pdb

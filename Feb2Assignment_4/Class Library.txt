@@ -1,0 +1,92 @@
+1. Create a class library CalculateConcession ()  that takes age as an input and calculates concession for travel as below:
+If age<=5 then “Little Champs- Free Ticket” should be displayed
+If age >60 then calculate 30% concession on the totalfare(Which is a constant Eg:500/-) and Display “ Senior Citizen” + Calculated Fare
+Else “Print Ticket Booked” + Fare. 
+Create a Console application with a Class called Program which has TotalFare as Constant, Name, Age.  
+Accept Name, Age from the user and call the CalculateConcession() function
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+class Library Program
+----------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Feb2Assignment_4
+{
+    public class Class1
+    {
+        public void CalculateConcession(int age,float fare)
+        {
+            if(age<=5)
+            {
+                Console.WriteLine("Little Champs- Free Ticket");
+            }
+            else if(age>60)
+            {
+                //declaring variable with value of total fare - 30% Concession 
+                float a = fare-150;
+
+                Console.WriteLine("Senior Citizen Your Fair is: "+a);
+            }
+            else
+            {
+                Console.WriteLine("Ticket Booked your Fair is: "+fare);
+            }
+            
+        }
+    }
+}
+-------------------------------------------
+Console class Program
+-------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Feb2Assignment_4;
+
+namespace Feb2Assignment4
+{
+    internal class Program
+    {
+        public string Name;
+        static int Age;
+        const float TotalFare= 500f;
+        public Program()
+        {
+            Console.Write("Enter your Name:");
+            Name = Console.ReadLine();
+            Console.Write("Enter your Age:");
+            Age =int.Parse(Console.ReadLine());
+        }
+        public static void Main(string[] args)
+        {
+            Program program = new Program();
+            Class1 c=new Class1();
+            c.CalculateConcession(Age, TotalFare);
+            Console.ReadKey();
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------------------
+OUTPUT
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Case 1:
+	Enter your Name:Prakash
+	Enter your Age:5
+	Little Champs- Free Ticket
+
+Case 2:
+	Enter your Name:Magesh
+	Enter your Age:24
+	Ticket Booked your Fair is: 500
+
+Case 3:
+	Enter your Name:Sandeep
+	Enter your Age:75
+	Senior Citizen Your Fair is: 350

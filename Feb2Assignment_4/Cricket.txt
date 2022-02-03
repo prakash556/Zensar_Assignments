@@ -1,0 +1,63 @@
+1. Write a program to find the Sum and the Average points scored by the teams in the IPL. 
+   Create a Class called Cricket that has a function called Pointscalculation(int no_of_matches) that takes no.of matches as input 
+   and accepts that many scores from the user. The function should then display the Average and Sum of the scores.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Feb2Assignment4
+{
+    internal class Cricket
+    {
+        static int no_of_matches;
+
+        public Cricket()
+        {
+            Console.Write("Enter the Number of Matches:");
+            no_of_matches = int.Parse(Console.ReadLine());
+        }
+        public void PointsCalculate(int no_of_match)
+        {
+            var score = new List<int>();
+            for (int i = 0; i < no_of_match; i++)
+            {
+                Console.Write("Enter the score of match{0}: ",i+1);
+                int j=int.Parse(Console.ReadLine());
+                score.Add(j);
+            }
+            Console.WriteLine("Sum of the All Matches Scores is: "+ score.Sum());
+            Console.WriteLine("Average of All the Matches Scores is:"+score.Average());
+
+        }
+        static void Main()
+        {
+            Cricket cricket = new Cricket();
+            cricket.PointsCalculate(no_of_matches);
+            Console.ReadKey();
+
+        }
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------
+OUTPUT
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Enter the Number of Matches:10
+Enter the score of match1: 78
+Enter the score of match2: 98
+Enter the score of match3: 67
+Enter the score of match4: 96
+Enter the score of match5: 75
+Enter the score of match6: 66
+Enter the score of match7: 92
+Enter the score of match8: 83
+Enter the score of match9: 66
+Enter the score of match10: 92
+Sum of the All Matches Scores is: 813
+Average of All the Matches Scores is:81.3

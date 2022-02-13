@@ -1,0 +1,201 @@
+-------------------------------------------------------------------------------------
+--displaying data from both tables
+select * from Emp
+select * from DEPT
+
+EMPNO   ENAME     JOB   	MGR   HIREDATE      	 SALARY     COMM   DEPTNO 
+7369    SMITH      CLERK	7902   	17-DEC-80     	 800	  null      20
+7499    ALLEN      SALESMAN     7698    20-FEB-81    	 1600     300       30
+7521    WARD	  SALESMAN      7698    22-FEB-81  	 1250     500       30
+7566    JONES     MANAGER       7839    02-APR-81   	 2975     null      20
+7654    MARTIN    SALESMAN      7698    28-SEP-81  	 1250     1400      30
+7698	BLAKE 	  MANAGER 	7839 	01-MAY-81    	 2850     null      30
+7782  	CLARK     MANAGER       7839    09-JUN-81   	 2450     null      10
+7788  	SCOTT     ANALYST       7566    19-APR-87        3000     null      20
+7839    KING      PRESIDENT     null    17-NOV-81        5000     null      10
+7844    TURNER    SALESMAN      7698    08-SEP-81    	 1500      0        30
+7876    ADAMS     CLERK         7788    23-MAY-87        1100     null      20
+7900    JAMES     CLERK         7698    03-DEC-81  	  950     null      30
+7902    FORD      ANALYST       7566    03-DEC-81   	 3000     null      20
+7934    MILLER    CLERK         7782    23-JAN-82	 1300     null      10
+
+
+
+DEPTNO  DNAME        LOC 
+10     ACCOUNTING   NEW YORK 
+20     RESEARCH     DALLAS 
+30     SALES        CHICAGO 
+40     OPERATIONS   BOSTON 
+---------------------------------------------------------------------------------------------
+1. Retrieve a list of MANAGERS.
+
+select * from emp where job='MANAGER'
+
+EMPNO	ENAME	JOB	MGR	HIREDATE	SALARY	COMM	DEPTNO
+
+7566	JONES	MANAGER	7839	02-APR-81	3272	NULL	20
+7698	BLAKE	MANAGER	7839	01-MAY-81	2850	NULL	30
+7782	CLARK	MANAGER	7839	09-JUN-81	2450	NULL	10
+---------------------------------------------------------------------------------------------
+2. Find out salary of both MILLER and SMITH.
+
+select ename,salary from emp where ename='MILLER' or ename='SMITH'
+
+ENAME	SALARY
+
+SMITH	880
+MILLER	1300
+----------------------------------------------------------------------------------------------
+3. Find out the names and salaries of all employees earning more than 1000 per month.
+
+ENAME	SALARY
+
+ALLEN	1600
+WARD	1250
+JONES	3272
+MARTIN	1250
+BLAKE	2850
+CLARK	2450
+SCOTT	3300
+KING	5000
+TURNER	1500
+ADAMS	1210
+FORD	3300
+MILLER	1300
+--------------------------------------------------------------------------------------------------
+4. Display the names and salaries of all employees except JAMES.
+
+select ename,salary from emp EXCEPT select ename,salary from emp where ename='JAMES'
+
+ENAME	SALARY
+
+ADAMS	1210
+ALLEN	1600
+BLAKE	2850
+CLARK	2450
+FORD	3300
+JONES	3272
+KING	5000
+MARTIN	1250
+MILLER	1300
+SCOTT	3300
+SMITH	880
+TURNER	1500
+WARD	1250
+----------------------------------------------------------------------------------------------------
+5. Find out the details of employees whose names begin with ‘S’.
+
+select * from EMP where ENAME like 'S%'
+
+EMPNO   ENAME     JOB   	MGR     HIREDATE      	SALARY     COMM   DEPTNO
+
+7369	SMITH	  CLERK		7982	17-DEC-80	880	   NULL	  20
+7788	SCOTT	  ANALYST	7566	19-APR-87	3300	   NULL	  20
+-----------------------------------------------------------------------------------------------------
+6. Find out the names of all employees that have ‘A’ anywhere in their name.
+
+select ename from EMP where ENAME like '%A%'
+
+ENAME
+
+ALLEN
+WARD
+MARTIN
+BLAKE
+CLARK
+ADAMS
+JAMES
+---------------------------------------------------------------------------------------------------- 
+7. Find out the names of all employees that have ‘L’ as their third character in their name.
+
+select ename from EMP where ENAME like '__L%'
+
+ENAME
+
+ALLEN
+MILLER
+-------------------------------------------------------------------------------------------------------
+8. Find out the names of the employees whose name begin with ‘A’ or ‘M’. 
+
+select * from EMP where ENAME like 'A%' or ENAME LIKE 'M%'
+
+EMPNO   ENAME     JOB   	MGR     HIREDATE      	SALARY     COMM   DEPTNO
+
+7499	ALLEN	SALESMAN	7698	20-FEB-81	1600	300	30
+7654	MARTIN	SALESMAN	7698	28-SEP-81	1250	1400	30
+7876	ADAMS	CLERK		7788	23-MAY-87	1210	NULL	20
+7934	MILLER	CLERK		7782	23-JAN-82	1300	NULL	10
+-----------------------------------------------------------------------------------------------------
+9. Compute yearly salary of SMITH. 
+
+select (select salary from emp where ename='SMITH')*12 as simth_salary_per_annum
+
+simth_salary_per_annum
+
+10560
+-----------------------------------------------------------------------------------------------------
+10. Compute daily salary of JONES.
+
+Daily_Salary
+
+105
+----------------------------------------------------------------------------------------------------
+11. Calculate the total monthly salary of all employees.
+
+select sum(salary)'Total_Monthly_Salary' from emp
+
+Total_Monthly_Salary
+
+30112
+----------------------------------------------------------------------------------------------------
+12. Print the average annual salary. 
+
+select AVG(salary*12) 'Average_Annual_Salary' from emp
+
+Average_Annual_Salary
+
+25810
+----------------------------------------------------------------------------------------------------
+13. Select the name, job, salary, department number of all employees except 
+    SALESMAN from department number 30. 
+
+Select  ename, job, salary, deptno from emp except Select   ename, job, salary, deptno from emp
+    where job='SALESMAN' and deptno=30. 
+
+ENAME   JOB     	SALARY DEPTNO
+
+ADAMS	CLERK		1210	20
+BLAKE	MANAGER		2850	30
+CLARK	MANAGER		2450	10
+FORD	ANALYST		3300	20
+JAMES	CLERK		950	30
+JONES	MANAGER		3272	20
+KING	PRESIDENT	5000	10
+MILLER	CLERK		1300	10
+SCOTT	ANALYST		3300	20
+SMITH	CLERK		880	20
+-------------------------------------------------------------------------------------------------------
+14. List unique departments of the EMP table. 
+
+select distinct(d.deptno),(d.dname) from DEPT d join emp e on d.DEPTNO=e.DEPTNO
+
+DEPTNO	DNAME
+
+10	ACCOUNTING
+20	RESEARCH
+30	SALES
+-------------------------------------------------------------------------------------------------------
+15. List the name and salary of employees who earn more than 1500 and are in department 10 or 30. 
+    Label the columns Employee and Monthly Salary respectively.
+
+SELECT ename 'Employee',salary 'Monthly Salary' from emp where salary>1500 and (deptno=10 or deptno=30)
+
+Employee	Monthly Salary
+
+ALLEN		1600
+BLAKE		2850
+CLARK		2450
+KING		5000
+
+-----------------------------------------------------------------------------------------------------------------
+ss

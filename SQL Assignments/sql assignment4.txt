@@ -1,0 +1,282 @@
+1.	Write a T-SQL Program to generate complete payslip of a given employee with respect to the following condition
+a)	HRA  as 10% Of sal
+b)	DA as  20% of sal
+c)	PF as 8% of sal
+d)	IT as 5% of sal
+e)	Deductions as sum of PF and IT
+f)	Gross Salary as sum of SAL,HRA,DA and Deductions
+g)	Net salary as  Gross salary- Deduction
+---------------------------------------------------------------------------------------------------------------------------------------------
+declare @salary float,@HRA float,@PF float,@IT float,@DA float,@Deductions float,@Gross_salary float,@Net_salary float
+begin
+
+set @salary=(select EmployeeSalary from employee where EmployeeId=530) --taking salary from employee table
+print 'Salary of employee' 
+print @salary --printing actual salary
+set @HRA=@salary*0.10 --10% HRA from salary
+print 'HRA:' 
+print @HRA
+set @DA=@salary*0.20 --20% DA from salary
+print 'DA: '
+print @DA
+set @PF=@salary*0.08 --8% PF from salary
+print 'PF: '
+print @DA
+set @IT=@salary*0.05 --5% IT from salary
+print 'IT: '
+print @IT
+set @Deductions=@PF+@IT
+print 'Deductions: '
+print @Deductions
+set @Gross_salary=@salary+@HRA+@DA+@Deductions
+print 'Gross salary:' 
+print @Gross_salary
+set @Net_salary =@Gross_salary-@Deductions
+print 'Net salary: '
+print @Net_salary
+end
+
+
+
+OUTPUT:
+
+
+Salary of employee
+10000
+HRA:
+1000
+DA: 
+2000
+PF: 
+2000
+IT: 
+500
+Deductions: 
+1300
+Gross salary:
+14300
+Net salary: 
+13000
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2.Write a T-SQL Program to Display complete result of a given student. (Note: Consider 10th standard result sheet and Student table structure as (sno,sname,maths,phy,comp)
+
+
+ declare @avg float,@math int,@phys int,@comp int ,@sum int,@name varchar(20),@studentid int
+ begin
+ set @studentid=120 --name of student we want to display the result
+ set @math=(select math from student1 where sid=@studentid)
+ set @phys=(select phys from student1 where sid=@studentid)
+ set @comp=(select comp from student1 where sid=@studentid)
+ set @name=(select sname from student1 where sid=@studentid)
+ print 'student details:'
+ print 'student name= '+@name
+ print 'marks in maths'
+ print @math
+ print 'marks in physics'
+ print @phys
+ print 'marks in computer science'
+ print @comp
+ set @sum=@math+@phys+@comp
+ set @avg=@sum/3
+ print 'Average marks'
+ print @avg
+ if @avg>=50
+		print @name+' is passed'
+ else
+	print @name+' is not passed'
+ end
+
+
+OUTPUT:
+
+student details:
+student name= ajith
+marks in maths
+67
+marks in physics
+78
+marks in computer science
+92
+Average marks
+79
+ajith is passed
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3.Write a T-SQL Program to find the factorial of a given number.
+
+declare @num int=6,@fact int=1
+begin
+while(@num>0)
+	begin
+	set @fact=@fact*@num
+	set @num=@num-1
+	end
+print 'factorial of 6:'
+print @fact
+end
+
+OUTPUT:
+
+factorial of 6:
+720
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+4.Create a stored procedure to generate multiplication tables up to a given number.
+
+CREATE or alter proc multiplication
+as
+declare @num int=5,@i int=0,@res int
+begin
+print 'multiplication of number 5'
+while(@i<11)
+	begin
+	set @res= @num*@i
+	print @res
+	set @i=@i+1
+	end
+end
+
+exec multiplication
+
+OUTPUT:
+
+multiplication of number 5
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5.	Create a user defined function calculate Bonus for all employees of a  given job using following conditions
+a.	       For Deptno10 employees 15% of sal as bonus.
+b.	       For Deptno20 employees  20% of sal as bonus
+c.	      For Others employees 5%of sal as bonus
+
+
+create or alter function fun1(@ejob varchar(20))	
+returns table
+as
+return(select ename,job,SALARY,deptno from emp where job=@ejob)
+go
+update emp set SALARY=SALARY+(SALARY*.15) where deptno=10
+update emp set SALARY=SALARY+(SALARY*.2) where deptno=20
+update emp set SALARY=SALARY+(SALARY*.05) where deptno<>10 and  deptno<>20
+select * from fun1('Manager')
+
+
+OUTPUT:
+
+ENAME	JOB	SALARY	DEPT
+
+JONES	MANAGER	6783	20
+BLAKE	MANAGER	3462	30
+CLARK	MANAGER	4282	10
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+6.	Create a trigger to restrict data manipulation on EMP table during General holidays. Display the error message like “Due to Independence day you cannot manipulate data”
+Note: Create holiday table as (holiday_date,Holiday_name) store at least 4 holiday details
+
+create table publicholidays
+(holiday_date varchar(20),
+holiday_name varchar(20))
+
+ 
+insert into publicholidays values
+('15-08-2021','Independence Day'),
+('2-10-2021','Gandhi jayanthi'),
+('5-09-2021','Teachers day'),
+('15-09-2021','Engineering day')
+ 
+select * from publicholidays
+
+create or alter trigger TRIGGER1
+on publicholidays
+instead of update
+as
+	raiserror('Due to public Holiday you cannot manipulate data',16,1)
+
+update  publicholidays set holiday_date='4-08-2021' where holiday_date='5-sep-2021'
+
+select * from publicholidays
+
+
+OUTPUT:
+
+Msg 50000, Level 16, State 1, Procedure TRIGGER1, Line 5 [Batch Start Line 179]
+Due to public Holiday you cannot manipulate data
+
+(0 rows affected)
+
+(0 rows affected)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

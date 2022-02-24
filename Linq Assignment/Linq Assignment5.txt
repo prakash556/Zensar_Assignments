@@ -408,8 +408,8 @@ g. Display a list of all the employee whose designation is Consultant and Associ
 
 QUERY:
 
-var myquery6 = empList.Where(x => x.DOB > DateOnly.ParseExact("1/1/1990", "d"));
-            foreach (var item in myquery6)
+            var myquery7 = empList.Where(x => x.Title == "Associate" || x.Title == "Consultant");
+            foreach (var item in myquery7)
             {
                 Console.WriteLine(item.EmployeeId + "\t" + item.FirstName + "\t" + item.LastName + "\t" + item.Title + "\t" + item.DOB + "\t" + item.DOJ + "\t" + item.City);
             }

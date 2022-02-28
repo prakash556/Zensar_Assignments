@@ -1,0 +1,220 @@
+1. Write a JavaScript program to calculate multiplication and division of two numbers (input from user).
+Sample Form:
+---------------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<head>
+    <title></title>
+    
+</head>
+<body>
+    <script type="text/javascript">
+        function Mul()
+        {
+            var num1=(document.getElementById("number1").value);
+            var num2=(document.getElementById("number2").value);
+            var res=num1*num2;
+            document.getElementById("result").innerHTML=res;
+        }
+        function Div()
+        {
+            var num1=document.getElementById("number1").value;
+            var num2=document.getElementById("number2").value;
+            var res=num1/num2;
+            document.getElementById("result").innerHTML=res;
+        }
+    </script>
+     Enter Number1:
+    <input type="number" val="" id="number1"  ><br><br>
+    Enter Number 2:
+    <input type="number" val="" id="number2" ><br><br>
+    <button type="submit" value="multiply" onclick="return Mul()">Multiply</button>
+    
+    <button type="submit" value="Division" onclick="return Div()">Divide</button><br><br>
+    <b> The Result is:</b>
+    <span id="result"></span>
+   
+</body>
+
+
+OUTPUT:
+
+Enter Number1: 
+10
+
+
+Enter Number 2: 
+2
+
+
+->Multiply   Divide
+
+The Result is: 20
+
+Enter Number1: 
+10
+
+
+Enter Number 2: 
+2
+
+
+Multiply   ->Divide
+
+The Result is: 5
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+2. Write a JavaScript to get the extension of a filename given by the user(hint: use split and pop())
+
+
+CODE:
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The extension of a filename.</title>
+</head>
+<body>
+    
+    <script language="javascript">
+        function Extension() {
+            fileName = document.getElementById('file').value;
+            extension = fileName.split('.').pop();
+            document.getElementById('output').innerHTML = extension;
+        };
+    </script>
+    Enter Filename:
+    <input type="text" id="file" /><br><br>
+    <input type="button" value="Check Extension" onclick="Extension();"/>
+    <p>The file extension is: <span id="output"></span></p>
+</body>
+</html>
+
+OUTPUT:
+
+Enter Filename: 
+HtmlFile.html
+
+
+The file extension is: html
+--------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+3. Write a JavaScript program to compute the sum of the given two integers. If the two values are same, 
+then returns triple their sum
+
+CODE:
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sum of twi Integers</title>
+    </head>
+    <body>
+        <script>
+            function sum()
+            {
+                var num1,num2,res;
+                num1=Number(document.getElementById("number1").value);
+                num2=Number(document.getElementById("number2").value);
+                if(num1==num2)
+                {
+                    res=3*(num1 + num2);
+                    document.getElementById("res").value=res;
+                }
+                else
+                    res=(num1) + (num2);
+                    document.getElementById("res").value=res;
+            }
+        </script>
+       Enter Number1: <input type="number" id="number1"><br><br>
+       Enter Number2: <input type="number" id="number2"><br><br>
+        <button onclick="sum()" >Sum</button><br><br>
+       Sum of two numbers: <input id="res">
+    </body>
+</html>
+
+OUTPUT:
+
+case1:
+
+Enter Number1: 10
+
+Enter Number2: 20
+
+Sum
+
+Sum of two numbers: 30
+
+
+case2:
+
+Enter Number1: 20
+
+
+Enter Number2: 20
+
+Sum
+
+Sum of two numbers: 120
+--------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
+4. Write a JavaScript program to check whether two given integer values are in the range 50..99 (inclusive). 
+Return true if both of them are in the said range, else false.
+
+CODE:
+
+<!DOCTYPE html>
+<head>
+    <title></title>
+    
+</head>
+<body>
+    <script type="text/javascript">
+        function NumberRange()
+        {
+
+           var num1=Number(document.getElementById("number1").value);
+            var num2=Number(document.getElementById("number2").value);
+        
+            if ((num1 >= 50 && num1 <= 99) && (num2 >= 50 && num2 <= 99))
+            {
+                var result="True";
+                document.getElementById("res").value=result;
+            } 
+            else 
+            {
+                var result="False";
+                document.getElementById("res").value=result;
+            }
+        
+        }
+    </script>
+     Enter Number1:
+    <input type="number" val="" id="number1"  ><br><br>
+    Enter Number 2:
+    <input type="number" val="" id="number2" ><br><br>
+    <button type="submit" onclick="NumberRange()">Check</button><br><br>
+    Result:<input id="res">
+ 
+</body>
+
+OUTPUT:
+
+case1:
+Enter Number1: 50
+
+Enter Number 2: 80
+
+->Check
+
+Result:True
+
+case2:
+Enter Number1: 20
+
+Enter Number 2: 80
+
+Check
+
+Result:False

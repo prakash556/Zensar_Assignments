@@ -1,0 +1,8 @@
+C:\Users\PT65791\source\repos\Jan21_assignment\Jan21_assignment\bin\Debug\Jan21_assignment.exe.config
+C:\Users\PT65791\source\repos\Jan21_assignment\Jan21_assignment\bin\Debug\Jan21_assignment.exe
+C:\Users\PT65791\source\repos\Jan21_assignment\Jan21_assignment\bin\Debug\Jan21_assignment.pdb
+C:\Users\PT65791\source\repos\Jan21_assignment\Jan21_assignment\obj\Debug\Jan21_assignment.csproj.AssemblyReference.cache
+C:\Users\PT65791\source\repos\Jan21_assignment\Jan21_assignment\obj\Debug\Jan21_assignment.csproj.SuggestedBindingRedirects.cache
+C:\Users\PT65791\source\repos\Jan21_assignment\Jan21_assignment\obj\Debug\Jan21_assignment.csproj.CoreCompileInputs.cache
+C:\Users\PT65791\source\repos\Jan21_assignment\Jan21_assignment\obj\Debug\Jan21_assignment.exe
+C:\Users\PT65791\source\repos\Jan21_assignment\Jan21_assignment\obj\Debug\Jan21_assignment.pdb

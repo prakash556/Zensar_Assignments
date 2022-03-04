@@ -1,0 +1,78 @@
+2.. Create a Class called Products with Productid, Product Name, Price. 
+Accept 10 Products, sort them based on the price, and display the sorted Products
+---------------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Feb2Assignment4
+{
+    internal class Products
+    {
+        public int ProductId;
+        public string ProductName;
+        public float Price;
+        public void Operation()
+        {
+            int n = 10;
+            SortedList<float,string> list = new SortedList<float, string>();
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write("Enter Product Name:");
+                ProductName=Console.ReadLine();
+                //Console.Write("Enter Product Id:");
+                //ProductId=int.Parse(Console.ReadLine());
+               // prodid.Add(ProductId);
+                Console.Write("Enter Product Price:");
+                Price=float.Parse(Console.ReadLine());
+                list.Add(Price,ProductName);
+            }
+            foreach (KeyValuePair<float, string> kv in list)
+            {
+                Console.WriteLine("Price of product:"+kv.Key + " " +"Product Name:"+ kv.Value);
+            }
+
+        }
+        static void Main()
+        {
+            Products products = new Products();
+            products.Operation();
+            Console.ReadKey();
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------
+OUTPUT
+---------------------------------------------------------------------------------------------------------------------------------
+Enter Product Name:Tv
+Enter Product Price:20000
+Enter Product Name:Fridge
+Enter Product Price:30000
+Enter Product Name:WashingMachine
+Enter Product Price:15000
+Enter Product Name:Bluetooth
+Enter Product Price:5000
+Enter Product Name:Smartphone
+Enter Product Price:12000
+Enter Product Name:Watch
+Enter Product Price:2000
+Enter Product Name:Speakers
+Enter Product Price:7000
+Enter Product Name:Laptop
+Enter Product Price:75000
+Enter Product Name:Airpods
+Enter Product Price:3500
+Enter Product Name:Bag
+Enter Product Price:500
+Price of product:500 Product Price:Bag
+Price of product:2000 Product Price:Watch
+Price of product:3500 Product Price:Airpods
+Price of product:5000 Product Price:Bluetooth
+Price of product:7000 Product Price:Speakers
+Price of product:12000 Product Price:Smartphone
+Price of product:15000 Product Price:WashingMachine
+Price of product:20000 Product Price:Tv
+Price of product:30000 Product Price:Fridge
+Price of product:75000 Product Price:Laptop

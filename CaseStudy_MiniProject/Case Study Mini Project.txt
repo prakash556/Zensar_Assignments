@@ -891,4 +891,446 @@ namespace Project
         }
     }
 }
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+OUTPUT
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Welcome to SMS(Student Mgmt. System) v1.0
+Tell us who you are :
+1. Student
+2. Admin
+Enter your choice ( 1 or 2 ) :
+1
+Enter Your Student Id to Login:556
+Login Successfull
+
+
+------------STUDENT PAGE-----------
+
+What do you Want to do
+1.Display your Details
+2.Update your Details
+3.View Available Courses
+4.Enroll Course
+Enter Your Choice:1
+Student Id:556
+Student Name:prakash
+Student Date Of Birth:3/31/1999 12:00:00 AM
+
+Do you want to continue in Student : Yes or No y
+
+------------STUDENT PAGE-----------
+
+What do you Want to do
+1.Display your Details
+2.Update your Details
+3.View Available Courses
+4.Enroll Course
+Enter Your Choice:2
+Enter the Student id Where to be Updated:
+556
+Enter Student Name value to update:
+sandeep
+Enter Student Date of Birth value to update:
+1999/03/16
+556
+prakash
+3/31/1999 12:00:00 AM
+Are you sure to Update this record ? Y/N
+y
+
+Do you want to continue in Student : Yes or No y
+
+------------STUDENT PAGE-----------
+
+What do you Want to do
+1.Display your Details
+2.Update your Details
+3.View Available Courses
+4.Enroll Course
+Enter Your Choice:3
+Course Details
+===============================================================
+Course Id       Course Name    Course Duration      Course Fees
+---------       -----------    ---------------      -----------
+
+125               python           3 months           5000
+
+130               .Net           2months           5000
+
+Do you want to continue in Student : Yes or No n
+
+Do You want to continue in Main Menu (Y | N):y
+
+Welcome to SMS(Student Mgmt. System) v1.0
+Tell us who you are :
+1. Student
+2. Admin
+Enter your choice ( 1 or 2 ) :
+2
+Enter Admin Id to Login:2066
+Login Successfull
+------ADMIN PAGE-----------
+
+What Do you want to do
+1.View All Students
+2.View All Courses
+3.Register Student
+4.Delete Student
+5.Introduce New Course
+6.Update Course Details
+7.Delete Existing Course
+8.View All Enrollments
+
+Enter Your Choice:
+1
+Student Details
+====================================================
+Student Id       Student Name    Student DateofBirth
+----------       ------------    -------------------
+
+525               deekshith           6/15/1999 12:00:00 AM
+
+556               sandeep           3/16/1999 12:00:00 AM
+
+Do you Want to Continue in Admin:y
+
+What Do you want to do
+1.View All Students
+2.View All Courses
+3.Register Student
+4.Delete Student
+5.Introduce New Course
+6.Update Course Details
+7.Delete Existing Course
+8.View All Enrollments
+
+Enter Your Choice:
+2
+Course Details
+===============================================================
+Course Id       Course Name    Course Duration      Course Fees
+---------       -----------    ---------------      -----------
+
+125               python           3 months           5000
+
+130               .Net           2months           5000
+
+Do you Want to Continue in Admin:y
+
+What Do you want to do
+1.View All Students
+2.View All Courses
+3.Register Student
+4.Delete Student
+5.Introduce New Course
+6.Update Course Details
+7.Delete Existing Course
+8.View All Enrollments
+
+Enter Your Choice:
+3
+Enter How many students you want to add:1
+Enter Student Details Below
+Enter Student Id:530
+Enter Student Name:prakash
+Enter Student Dateofbirth:1999/03/31
+Student Added Successfully..
+
+Do you Want to Continue in Admin:y
+
+What Do you want to do
+1.View All Students
+2.View All Courses
+3.Register Student
+4.Delete Student
+5.Introduce New Course
+6.Update Course Details
+7.Delete Existing Course
+8.View All Enrollments
+
+Enter Your Choice:
+1
+Student Details
+====================================================
+Student Id       Student Name    Student DateofBirth
+----------       ------------    -------------------
+
+525               deekshith           6/15/1999 12:00:00 AM
+
+530               prakash           3/31/1999 12:00:00 AM
+
+556               sandeep           3/16/1999 12:00:00 AM
+
+Do you Want to Continue in Admin:y
+
+What Do you want to do
+1.View All Students
+2.View All Courses
+3.Register Student
+4.Delete Student
+5.Introduce New Course
+6.Update Course Details
+7.Delete Existing Course
+8.View All Enrollments
+
+Enter Your Choice:
+4
+Enter the Student id to be deleted:
+556
+556
+sandeep
+3/16/1999 12:00:00 AM
+Are you sure to delete this record ? Y/N
+y
+Record deleted successfuly
+
+Do you Want to Continue in Admin:y
+
+What Do you want to do
+1.View All Students
+2.View All Courses
+3.Register Student
+4.Delete Student
+5.Introduce New Course
+6.Update Course Details
+7.Delete Existing Course
+8.View All Enrollments
+
+
+Enter Your Choice:
+1
+Student Details
+====================================================
+Student Id       Student Name    Student DateofBirth
+----------       ------------    -------------------
+
+525               deekshith           6/15/1999 12:00:00 AM
+
+530               prakash           3/31/1999 12:00:00 AM
+
+Do you Want to Continue in Admin:y
+
+What Do you want to do
+1.View All Students
+2.View All Courses
+3.Register Student
+4.Delete Student
+5.Introduce New Course
+6.Update Course Details
+7.Delete Existing Course
+8.View All Enrollments
+
+Enter Your Choice:
+2
+Course Details
+===============================================================
+Course Id       Course Name    Course Duration      Course Fees
+---------       -----------    ---------------      -----------
+
+125               python           3 months           5000
+
+130               C language           5months           7000
+
+Do you Want to Continue in Admin:n
+
+Do You want to continue in Main Menu (Y | N):y
+
+Welcome to SMS(Student Mgmt. System) v1.0
+Tell us who you are :
+1. Student
+2. Admin
+Enter your choice ( 1 or 2 ) :
+1
+Enter Your Student Id to Login:525
+Login Successfull
+
+
+------------STUDENT PAGE-----------
+
+What do you Want to do
+1.Display your Details
+2.Update your Details
+3.View Available Courses
+4.Enroll Course
+Enter Your Choice:4
+Enter How many Courses you want to Enroll:2
+Enter Enroll Details:
+Enter Existing  Student Id:
+525
+Enter Existing Course Id:
+125
+Student Enrolled Successfully..
+Enter Enroll Details:
+Enter Existing  Student Id:
+525
+Enter Existing Course Id:
+130
+Student Enrolled Successfully..
+
+Do you want to continue in Student : Yes or No n
+
+Do You want to continue in Main Menu (Y | N):y
+
+Welcome to SMS(Student Mgmt. System) v1.0
+Tell us who you are :
+1. Student
+2. Admin
+Enter your choice ( 1 or 2 ) :
+2
+Enter Admin Id to Login:2066
+Login Successfull
+------ADMIN PAGE-----------
+
+What Do you want to do
+1.View All Students
+2.View All Courses
+3.Register Student
+4.Delete Student
+5.Introduce New Course
+6.Update Course Details
+7.Delete Existing Course
+8.View All Enrollments
+
+Enter Your Choice:
+8
+Enrollment Details
+===============================================================
+Student_Id       Course_Id    DateofEnrollment
+----------       ---------    ----------------
+
+525               125           3/4/2022 10:49:06 AM
+
+525               130           3/4/2022 10:49:20 AM
+
+Do you Want to Continue in Admin:y
+
+What Do you want to do
+1.View All Students
+2.View All Courses
+3.Register Student
+4.Delete Student
+5.Introduce New Course
+6.Update Course Details
+7.Delete Existing Course
+8.View All Enrollments
+
+Enter Your Choice:
+5
+Enter How many Courses you want to add:1
+Enter Course Details
+Enter Course Id: 135
+Enter Course Name: golang
+Enter Course Duration: 6months
+Enter Course Fees: 7000
+Course Added Successfully..
+
+Do you Want to Continue in Admin:y
+
+What Do you want to do
+1.View All Students
+2.View All Courses
+3.Register Student
+4.Delete Student
+5.Introduce New Course
+6.Update Course Details
+7.Delete Existing Course
+8.View All Enrollments
+
+Enter Your Choice:
+6
+Enter the Course id Where to be Updated:
+125
+Enter Course Name value to update:
+python
+Enter Course duration value to update:
+4months
+Enter Course Fees value to update:
+4000
+125
+python
+3 months
+5000
+Are you sure to Update this record ? Y/N
+y
+Record Updated successfuly
+
+Do you Want to Continue in Admin:y
+
+What Do you want to do
+1.View All Students
+2.View All Courses
+3.Register Student
+4.Delete Student
+5.Introduce New Course
+6.Update Course Details
+7.Delete Existing Course
+8.View All Enrollments
+
+Enter Your Choice:
+2
+Course Details
+===============================================================
+Course Id       Course Name    Course Duration      Course Fees
+---------       -----------    ---------------      -----------
+
+125               python           4months           4000
+
+130               C language           5months           7000
+
+135               golang           6months           7000
+
+Do you Want to Continue in Admin:y
+
+What Do you want to do
+1.View All Students
+2.View All Courses
+3.Register Student
+4.Delete Student
+5.Introduce New Course
+6.Update Course Details
+7.Delete Existing Course
+8.View All Enrollments
+
+Enter Your Choice:
+7
+Enter the Course id to be deleted:125
+125
+python
+4months
+4000
+Are you sure to delete this record ? Y/N
+y
+Record deleted successfuly
+
+Do you Want to Continue in Admin:y
+
+What Do you want to do
+1.View All Students
+2.View All Courses
+3.Register Student
+4.Delete Student
+5.Introduce New Course
+6.Update Course Details
+7.Delete Existing Course
+8.View All Enrollments
+
+Enter Your Choice:
+2
+Course Details
+===============================================================
+Course Id       Course Name    Course Duration      Course Fees
+---------       -----------    ---------------      -----------
+
+130               C language           5months           7000
+
+135               golang           6months           7000
+
+Do you Want to Continue in Admin:n
+
+Do You want to continue in Main Menu (Y | N):n
+
+
+C:\Users\sysadm\source\repos\CaseStudy_MiniProject\CaseStudy_MiniProject\bin\Debug\net6.0\CaseStudy_MiniProject.exe (process 27016) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+Press any key to close this window . . .
 

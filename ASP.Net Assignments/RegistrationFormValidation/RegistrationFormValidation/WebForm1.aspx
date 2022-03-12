@@ -128,7 +128,7 @@
                 <td class="auto-style4">
                     <p>Validation Summary</p>
                     <asp:ValidationSummary runat="server" ShowMessageBox="true" ShowSummary="true" />
-                    <asp:Button ID="Button1" runat="server" Text="Check" />
+                    <asp:Button ID="Button1"  runat="server" Text="Check" />
                 </td>
                 <td>&nbsp;</td>
             </tr>

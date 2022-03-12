@@ -18,6 +18,7 @@ namespace RegistrationFormValidation
         protected void Button1_Click(object sender, EventArgs e)
         {
             Response.Write("Your Registration is successfull");
+            
         }
     }
 }

@@ -9,10 +9,18 @@
     @using (Html.BeginForm("SearchBY", "Student", FormMethod.Get))
     {
         <b>Search By:</b> @Html.RadioButton("searchBy", "City")<text>City</text>
-         @Html.RadioButton("searchBy", "Branch")<text>Branch</text>
-         @Html.RadioButton("searchBy", "Percentage")<text>Percentage</text>
-         @Html.RadioButton("searchBy", "StudentId")<text>StudentId</text>
-         @Html.TextBox("search") <input type="submit" value="search" />
+        @Html.RadioButton("searchBy", "Branch")<text>Branch</text>
+
+        @Html.RadioButton("searchBy", "StudentId")<text>StudentId</text>
+        @Html.TextBox("search") <input type="submit" value="search" /><br />
+    }
+</p>
+<p>
+    @using (Html.BeginForm("searchbyPercentage", "Student", FormMethod.Get))
+    {
+        <b>Search by Percentage:</b><text>start Range</text> @Html.TextBox("start")
+<text>End Range</text>@Html.TextBox("end") <input type="submit" value="search" /><br />
+
     }
 </p>
 
@@ -35,9 +43,6 @@
         </th>
         <th>
             Percentage
-        </th>
-        <th>
-            Action
         </th>
         <th></th>
     </tr>

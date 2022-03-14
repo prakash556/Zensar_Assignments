@@ -82,6 +82,15 @@ namespace StudentProject.Controllers
                 //return View();
                return View(sc.StudentTable.Where(x => x.Id.ToString()==search).ToList());
             }
+            
+        }
+        public ActionResult searchbyPercentage(int start, int end)
+        {
+            //List<StudentTable> st=sc.StudentTable.Where(x=>x.Percentage >start && x.Percentage<end).ToList();
+            List<StudentTable> st=(from c in sc.StudentTable
+                                   where c.Percentage>=start && c.Percentage <= end
+                                   select c).ToList();
+            return View(st);
         }
     }
 }
